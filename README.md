@@ -37,10 +37,11 @@ petr@gmail.com,Petr,Petrov
     curl -i -H 'Accept: application/json' -d 'email=petr@gmail.com' http://localhost:3030/send
 
 ### Response
-
-    {
-		"status": "ok"
-	}
+`
+{
+  "status": "ok"
+}
+`
 
 ### Create email list and send emails request example
 
@@ -49,7 +50,8 @@ petr@gmail.com,Petr,Petrov
     curl -i -H 'Accept: application/json' -d 'listName=myList' http://localhost:3030/list
 
 ### Response
-
-    {
-		"status": "ok"
-	}
+`
+{
+  "status": "ok"
+}
+`
