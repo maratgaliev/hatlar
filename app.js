@@ -61,11 +61,12 @@ app.post('/list', jsonParser, body('listName').isLength({ min: 2 }).withMessage(
   }
   
   const listName = req.body.listName;
+  const validListName = `${listName}@${domain}`;
+
+  let mailingList = '';
+  let members = [];
 
   try {
-    let mailingList = '';
-    const validListName = `${listName}@${domain}`;
-
     mailingList = await mailgunClient.lists.get(validListName).catch(async (err) => {
       if (err.status === 404) {
         const createdMailingList = await mailgunClient.lists.create({ address: validListName });
@@ -76,8 +77,6 @@ app.post('/list', jsonParser, body('listName').isLength({ min: 2 }).withMessage(
       throw new Error(err);
     });
 
-    let members = [];
-    
     const msgData = {
       from: fromWho,
       to: mailingList.address,
