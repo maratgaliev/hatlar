@@ -1,0 +1,3 @@
+from: example@mail.com
+subject: "Attention please!"
+csv_file: "emails.csv"
