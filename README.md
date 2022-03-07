@@ -22,13 +22,17 @@ API_KEY=XXX
 DOMAIN=XXX
 ```
 
-###CSV file example
+### CSV file example
 
 ```
 email,name,surname
 hey@mail.com,Ivan,Ivanov
 petr@gmail.com,Petr,Petrov
 ```
+
+### Adjusting template
+
+Please feel free to edit `template.hbs` and adjust yaml configuration in `config.yaml`, also see `app.js` for the email variables.
 
 ### Send one email request example
 
